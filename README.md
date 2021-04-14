@@ -3,7 +3,7 @@
 
 ### Habit Tracker
 ___
-## 4.1
+## 4.1 리액트의 전반적인 개념 정리
 > 리액트는 컴포넌트이다
 1. Class Component
 2. Function Component
