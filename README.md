@@ -55,7 +55,7 @@ ReactDOM.render(
 ```
 - ReactDom.render()로 그 안에 어떤 Components를 브라우저가 이해할 수 있게 바꿔줄 지 설명.
 - document.getElementById("root")를 통해 html이 불러 진 것도 알 수 있음.
-```js
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -79,8 +79,8 @@ ReactDOM.render(
 ___
 ## 4.5 JSX란? (HTML과의 차이점 정리)
 - 자바스크립트 코드위에서 간단하게 HTML처럼 할 수 있도록 만들어진 것. 
-- 
-- #### JSX와 HTML의 다른점은 무엇인가?
+
+##### JSX와 HTML의 다른점은 무엇인가?
 
 > HTML과 비슷하나 엄밀히 말하자면 JSX는 자바스크립트임. 
 
@@ -111,4 +111,42 @@ function App() {
         <h1>{item}</h1>
     ))}
 ```
- item ⇒ (<h1>{item}</h1> ) 여기서의 ( ), 이 괄호는 코드 블락이 아닌 값들을 묶어서 쓸 수 있는 괄호로, 리액트를 제외하고는 거의 쓰이지 않음. 
+여기서의 ( ), 이 괄호는 코드 블락이 아닌 값들을 묶어서 쓸 수 있는 괄호로, 리액트를 제외하고는 거의 쓰이지 않음. 
+___
+## 4.6 Habit tracker 만들기
+
+<!-- list -->
+<details>
+<summary>fontawesome 추가</summary>
+
+1. 콘솔에 yarn add @fortawesome/fontawesome-free 입력
+2. index.js에  import '@fortawesome/fontawesome-free/js/all.js' 추가
+
+
+</details>
+___
+
+## 4.7 State 이해하기 
+
+#### State란?
+
+- 컴포넌트 안에서 우리가 정의한 컴포넌트의 state 오브젝트.
+- React에는 syntatic event라 해서 일반 DOM 요소에서 발생하는 이벤트 오브젝트와는 약간 다른 개념이다. 
+- state라는 오브젝트를 통해서 데이터에 업데이트가 발생시 리액트가 자동적으로 우리가 구현한 render 함수 호출.
+<details>
+  <summary> Props란?</summary>
+- 컴포넌트 밖에서 주어지는 데이터 입니다.
+- 재사용을 높일 수 있음.
+</details>
+
+1) state를 업데이트 할때는 반.드.시 setState() 이용해주기! 
+2) state에 가지고 있는 오브젝트 안에는 id를 써서 key를 제공해주기 
+3) 리액트에서는 state를 직접 수정하면 안된다!! 
+- 리액트는 shallow comparison을 이용하므로 안에 있는 data를 수정하면 동일한 object이기 때문에 동일하다고 생각하여 업데이트를 하지 않음! → 그러므로 setState();를 써서 업데이트를 해주는 것임!
+4) spread operator(...)을 이용해서 copy하기 
+
+## 4.8 Habits component 만들기(State up, list key)
+
+## 4.9 이벤트 처리 하기 Part1. 골격 먼저 만들기
+
+- 데이터를 가지고 있는 곳이 내가 이 데이터를 어떻게 수정하면 되는지 잘 알고 있는 최고의 장소이기 때문에 state가 있는 곳에 function도 같이 만들어 주기!
